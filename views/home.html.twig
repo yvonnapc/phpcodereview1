@@ -6,30 +6,42 @@
     <title>Address Book Home</title>
   </head>
   <body>
-    <h1>Address Book</h1>
-      {% if contacts is not empty %}
-      <p>Here are your contacts:</p>
-        {% for new_contact in contacts %}
-            <p>Name: {{ new_contact.getName }}</p>
-            <li>Number: {{ new_contact.getNumber }}</li>
-            <li>Address: {{ new_contact.getAddress }}</li>
-        {% endfor %}
-    {% endif %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+        <h1>Address Book</h1>
+          {% if contacts is not empty %}
+          <h3>Here are your contacts:</h3>
+            {% for new_contact in contacts %}
+            <ul>
+                <li>Name: {{ new_contact.getName }}</li>
+                <li>Number: {{ new_contact.getNumber }}</li>
+                <li>Address: {{ new_contact.getAddress }}</li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+      </div>
 
+      <div class="col-md-7">
+          <h3>Add A Contact</h3>
+              <form action='/library' method='post'>
+                <label for='name'>Name:</label>
+                <input id='name' name='name' type='text'>
 
-    <h3>Add A Contact</h3>
-        <form action='/library' method='post'>
-          <label for='name'>Name:</label>
-          <input id='name' name='name' type='text'>
+                <label for='number'>Number</label>
+                <input id='number' name='number' type='text'>
 
-          <label for='number'>Number</label>
-          <input id='number' name='number' type='text'>
+                <label for='address'>Address</label>
+                <input id='address' name='address' type='text'>
 
-          <label for='address'>Address</label>
-          <input id='address' name='address' type='text'>
+                <button type='submit'>Add Contact</button>
+              </form>
 
-          <button type='submit'>Add Contact</button>
-        </form>
-
+              <form action='/delete' method='post'>
+                  <button type='submit'>Clear Contacts</button>
+              </form>
+      </div>
+    </div>
   </body>
 </html>

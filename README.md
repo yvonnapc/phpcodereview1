@@ -23,12 +23,12 @@ If you have any issues, questions, ideas, or concerns contact me at yvonnap.cont
 
 ## Technologies Used
 
-• Bootstrap
-• CSS
-• PHP
-• GIT
-• Twig
-• Silex
+• Bootstrap<br>
+• CSS<br>
+• PHP<br>
+• GIT<br>
+• Twig<br>
+• Silex<br>
 
 ### License
 
